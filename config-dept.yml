@@ -39,8 +39,6 @@ info:
 
 ---
 
-spring:
-  profiles: test
 server:
   port: 8001
 
