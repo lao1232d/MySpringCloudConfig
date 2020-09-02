@@ -2,7 +2,6 @@
 spring:
   profiles:
     active: dev
- ---
 
 server:
   port: 8001
@@ -50,7 +49,7 @@ mybatis:
 
 #spring的配置
 spring:
-  profiles: dev
+  profiles: test
   application:
     name: springcloud-config-dept
   datasource:
