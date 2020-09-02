@@ -13,6 +13,7 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
 
 spring:
+  profiles: test
   application:
     name: springcloud-provider-dept
   datasource:
@@ -50,6 +51,7 @@ mybatis:
 
 spring:
   application:
+    profiles: dev
     name: springcloud-provider-dept
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
