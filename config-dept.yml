@@ -1,0 +1,76 @@
+
+spring:
+  profiles:
+    active: dev
+ ---
+
+server:
+  port: 8001
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  type-aliases-package: com.lw.springcloud.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+#spring的配置
+spring:
+  profiles: dev
+  application:
+    name: springcloud-config-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://39.105.10.92:3306/sc?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: a88419911
+
+#Eureka的配置，服务注册到哪里
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: springcloud-provider-dept8001  # 修改eureka上的默认描述信息！
+#    prefer-ip-address: true  #掩饰localhost, 可以显示服务的IP地址 它默认为false
+
+#info配置
+info:
+  app.name: lw.springcloud
+  company.name: com.lw.study
+  
+---
+
+server:
+  port: 8001
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  type-aliases-package: com.lw.springcloud.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+#spring的配置
+spring:
+  profiles: dev
+  application:
+    name: springcloud-config-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://39.105.10.92:3306/sc2?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: a88419911
+
+#Eureka的配置，服务注册到哪里
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: springcloud-provider-dept8001  # 修改eureka上的默认描述信息！
+#    prefer-ip-address: true  #掩饰localhost, 可以显示服务的IP地址 它默认为false
+
+#info配置
+info:
+  app.name: lw.springcloud
+  company.name: com.lw.study
+
